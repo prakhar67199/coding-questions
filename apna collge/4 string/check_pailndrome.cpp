@@ -1,12 +1,29 @@
 #include<iostream>
 using namespace std;
+char lower(char ch)
+{
+   if(ch>='a'&&ch<='z')
+   {
+    return ch;
+   }
+   else
+   {
+         char temp =ch-'A'+'a';
+         return temp;  
+    }
+    if(ch>='1'&&ch<='9')
+    {
+        char temp= ch-'0';
+        return temp;
+    }
+}
 bool istrue(char p[],int k)
 {
     int s=0;
     int e=k-1;
     while(s<=e)
     {
-        if(p[s]!=p[e])
+        if(lower(p[s])!=lower(p[e]))
         {
             return 0;
         }
